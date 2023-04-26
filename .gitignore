@@ -1,0 +1,14 @@
+# .gitignore file
+
+# Exclude IDE files
+.idea/
+.vscode/
+.metadata
+
+# Exclude build artifacts
+/build/
+/dist/
+
+# Exclude temporary files
+*.tmp
+*.log

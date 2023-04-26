@@ -1,0 +1,44 @@
+server:
+  port: 8083
+  tomcat:
+    threads:
+      max: 1020
+
+
+spring:
+  mvc:
+    async:
+      request-timeout: -1
+  # DB config
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: admin
+    password:
+  # H2 specific
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    open-in-view: false
+
+output-path: "${user.dir}\\pdf-output\\"
+jasperreports:
+  pdf:
+    report:
+      size-page-to-content: true
+      force-line-break-policy: false
+    export:
+      metadata-author: ZaTribune
+      report-encrypted: true
+      allowed-permissions-hint: PRINTING
+      report-compressed: true
+
+validation:
+  locales:
+    - "Er"
+    - "Ar"
+logging:
+  level:
+    web: debug
